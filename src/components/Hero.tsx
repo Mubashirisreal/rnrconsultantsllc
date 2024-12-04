@@ -42,7 +42,7 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              Your Trusted Partner for Business Excellence
+              Your Trusted Partner For Business Excellence
             </motion.h1>
             <motion.p 
               className="text-gray-200 text-lg md:text-xl max-w-xl mb-8 font-regular"
