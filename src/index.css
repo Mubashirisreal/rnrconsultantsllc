@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #000000;
+  --color-secondary: #14213d;
+  --color-accent: #fca311;
+  --color-light: #e5e5e5;
+  --color-white: #ffffff;
+}
+
+body {
+  font-family: 'Graphik', sans-serif;
+  @apply bg-gray-50;
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Graphik', sans-serif;
+    @apply font-medium;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl tracking-tight;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl tracking-tight;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl tracking-tight;
+  }
+
+  .subheading {
+    @apply font-regular tracking-wide;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-secondary text-white font-medium px-8 py-4 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-32;
+  }
+
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-divider {
+    @apply relative;
+  }
+}
+
+@keyframes slideBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.services-background {
+  background: linear-gradient(135deg, #000000, #14213d, #000000);
+  background-size: 400% 400%;
+  animation: slideBackground 15s ease infinite;
+  position: relative;
+  box-shadow: inset 0 0 100px rgba(0,0,0,0.5);
+}
+
+.services-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(252, 163, 17, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%);
+  pointer-events: none;
+}
+
+.service-card {
+  @apply bg-white p-8 rounded-lg shadow-lg transform transition-all duration-300;
+  backdrop-filter: blur(10px);
+}
+
+.service-card:hover {
+  @apply -translate-y-2 shadow-2xl;
+}
+
+.service-icon {
+  @apply bg-accent/10 p-4 rounded-xl inline-flex items-center justify-center mb-6;
+}
+
+.service-icon svg {
+  @apply text-accent h-8 w-8;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.service-card h4 {
+  @apply font-medium;
+}
