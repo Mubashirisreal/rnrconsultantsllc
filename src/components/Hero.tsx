@@ -50,7 +50,7 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              Unlock the potential of your business with our expert cybersecurity and financial consultancy services.
+             Unlock the potential of your business with our expert contract management team, cybersecurity and financial consultancy services
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
